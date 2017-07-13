@@ -19,9 +19,6 @@ internal class CloseButton: UIButton {
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath()
 
-        path.lineWidth = lineWidth
-        path.lineCapStyle = .round
-
         let iconFrame = CGRect(
             x: (rect.width - iconSize) / 2.0 + 2,
             y: (rect.height - iconSize) / 2.0 + 2,
@@ -32,8 +29,10 @@ internal class CloseButton: UIButton {
         path.addArc(withCenter: CGPoint(x: iconFrame.midX, y: iconFrame.midY), radius: iconSize, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: false)
         
         lineColor.setFill()
-        
         path.fill()
+        
+        path.lineWidth = lineWidth
+        path.lineCapStyle = .round
 
         path.move(to: iconFrame.origin)
         path.addLine(to: CGPoint(x: iconFrame.maxX, y: iconFrame.maxY))
@@ -41,7 +40,6 @@ internal class CloseButton: UIButton {
         path.addLine(to: CGPoint(x: iconFrame.minX, y: iconFrame.maxY))
 
         UIColor.white.setStroke()
-
         path.stroke()
     }
 
