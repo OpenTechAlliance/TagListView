@@ -29,11 +29,9 @@ internal class CloseButton: UIButton {
             height: iconSize - 4
         )
         
-        path.addArc(withCenter: CGPoint(x: iconFrame.midX, y: iconFrame.midY), radius: iconSize, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: true)
-        
-        lineColor.setStroke()
-        
-        path.stroke()
+        let circlePath = UIBezierPath.init(ovalIn: CGRect(x: (rect.width - iconSize) / 2.0, y: (rect.height - iconSize), width: iconSize, height: iconSize))
+        lineColor.setFill()
+        circlePath.stroke()
 
         path.move(to: iconFrame.origin)
         path.addLine(to: CGPoint(x: iconFrame.maxX, y: iconFrame.maxY))
