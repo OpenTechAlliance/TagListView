@@ -21,10 +21,10 @@ internal class CloseButton: UIButton {
         let circlePath = UIBezierPath()
 
         let iconFrame = CGRect(
-            x: (rect.width - iconSize) / 2.0 + 2,
-            y: (rect.height - iconSize) / 2.0 + 2,
-            width: iconSize - 4,
-            height: iconSize - 4
+            x: (rect.width - iconSize) / 2.0,
+            y: (rect.height - iconSize) / 2.0,
+            width: iconSize - 2,
+            height: iconSize - 2
         )
         
         
