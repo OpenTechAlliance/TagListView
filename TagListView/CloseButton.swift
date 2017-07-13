@@ -23,10 +23,9 @@ internal class CloseButton: UIButton {
         let iconFrame = CGRect(
             x: (rect.width - iconSize) / 2.0,
             y: (rect.height - iconSize) / 2.0,
-            width: iconSize - 2,
-            height: iconSize - 2
+            width: iconSize,
+            height: iconSize
         )
-        
         
         circlePath.addArc(withCenter: CGPoint(x: iconFrame.midX, y: iconFrame.midY), radius: iconSize, startAngle: 0, endAngle: CGFloat(2 * Double.pi), clockwise: false)
         
